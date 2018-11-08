@@ -2,6 +2,7 @@
 using namespace std;
 
 // <-- ADD YOUR FUNCTION PROTOTYPE HERE
+int rightOrder(int &, int &, int &);
 
 int main()
 {
@@ -13,7 +14,7 @@ int main()
 
 
   // <-- ADD YOUR FUNCTION CALL HERE
-
+  rightOrder(red, green, blue);
 
   //DO NOT CHANGE WITHIN THIS AREA...
   cout<<"Rearranged....\n";
@@ -23,3 +24,53 @@ int main()
 }
 
 // <-- ADD YOUR FUNCTION DEFINITON HERE
+int rightOrder(int &r, int &g, int &b)
+{
+        int temp;
+
+        if(r >= g)
+        {
+                if(b >= g)
+                {
+                        if(r >= b)
+                        {
+                                temp = b;
+                                b = g;
+                                g = temp;
+                        }
+                        else
+                        {
+                                temp = r;
+                                r = b;
+                                b = g;
+                                g = temp;
+                        }
+                }
+        }
+        else
+        {
+                if(r >= b)
+                {
+                        temp = r;
+                        r = g;
+                        g = temp;
+                }
+                else
+                {
+                        if(g >= b)
+                        {
+                                temp = r;
+                                r = g;
+                                g = b;
+                                b = temp;
+                        }
+                        else
+                        {
+                                temp = r;
+                                r = b;
+                                b = temp;
+                        }
+                }
+        }
+
+}
